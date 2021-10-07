@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    height: 100%;
+    margin-left: auto!important;
+    
+    -webkit-box-orient: vertical!important;
+    -webkit-box-direction: normal!important;
+    -ms-flex-direction: column!important;
+    flex-direction: column!important;
+}
+
+.footer_nav{
+    margin-top: auto!important;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+
+    background-color: black;
+    border-radius: 10px 10px  0px 0px;
+}
+.nav_links{
+    text-align: center;
+}
+.nav_link{
+    text-decoration: none;
+}
+.nav_img{
+    margin-top: 5px;
+    color:antiquewhite;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.nav_img_user{
+    height: 45px;
+
+}
+.nav_img_house{
+    height: 55px;
+
+}
+.nav_img_tool{
+    height: 40px;
+
+}
