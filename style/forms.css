@@ -28,7 +28,12 @@
     background-color: #f2f2f2;
     padding: 20px;
     width: 90%;
-    text-align: center;
     
+    
+}
+
+.mid_page{
+    display: flex;
+    justify-content: center;
 }
 
