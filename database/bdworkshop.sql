@@ -26,6 +26,7 @@ CREATE TABLE cars(
 );
 CREATE TABLE clientCar(
     idClientCar INT NOT NULL AUTO_INCREMENT,
+    CONSTRAINT PK_IDCLIENTCAR PRIMARY KEY(idClientCar),
     idCar INT NOT NULL,
     CONSTRAINT FK_IDCAR FOREIGN KEY (idCar) REFERENCES cars(idCar),
     idClient INT NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE invoice(
     idInvoice INT NOT NULL AUTO_INCREMENT, 
     CONSTRAINT PK_IDINVOICE PRIMARY KEY(idInvoice),
     idClientCar INT NOT NULL,
-    CONSTRAINT FK_IDCLIENTCAR FOREIGN KEY (idClientCar) REFERENCES clientCar(idClientCar)
+    CONSTRAINT FK_IDCLIENTCAR FOREIGN KEY (idClientCar) REFERENCES clientCar(idClientCar),
     dateInvoice DATE NOT NULL,
     priceInvoice INT NOT NULL,
     pagado BOOLEAN NOT NULL
