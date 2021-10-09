@@ -4,40 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Insertar Cliente</title>
 
     <link rel="stylesheet" href="/proyectapp/admin/style/style.css">
 </head>
 <body>
     <?php
         session_start();
+
+        require 'php/conectDB.php';
+        $db = conectDB();
     ?>
   
     <?php
     
     if($_SESSION == null){
-    ?>
-        <div class="upper_page">
-        <h1> Iniciar sesión </h1>
-    
-        </div>
-        <div class="mid_page">
-            <div class="login_form">
-                <form action="/proyectapp/admin/php/login_act.php" method="post">
-                    <label>
-                        Correo <span class="req">*</span>
-                    </label>
-                    <input class="login_input" type="email" placeholder='Correo' name="emailWorker"/>
-                    <label>
-                        Contraseña <span class="req">*</span>
-                    </label>
-                    <input class="login_input" type="password" placeholder='Contraseña' name="passwordWorker"/>
-                    <input class="login_btn" type="submit" value="Submit"/>
-                </form>
-            </div>
-        </div>
-    <?php
-    } else{
+        header("location: /proyectapp/admin/index.php");
+
+    }else{  
+
     ?>
     <div class='header'>
         <header class='nav_bar'>
@@ -72,6 +57,38 @@
                     ?>
         </header>
     </div>
+    <div>
+        <h1>Nuevo cliente</h1>
+        <div class="mid_page">
+            <div class="div_insert">   
+                
+                <form method="POST" action="/proyectapp/admin/php/insertClient.php">
+                
+                    <label class="labelname">Nombre</label>
+                    <input class="entrada" type="text" name="name">
+
+                    <label class="labelname">Apellidos</label>
+                    <input class="entrada" type="text" name="surname">
+
+                    <label class="labelname">Correo</label>
+                    <input class="entrada" type="email" name="email">
+
+                
+                    <label class="labelname">Matricula</label>
+                    <input class="entrada" type="text" name="license"> 
+
+                    <label class="labelname">Marca</label>
+                    <input class="entrada" type="text" name="brand">   
+
+                    <label class="labelname">Modelo</label>
+                    <input class="entrada" type="text" name="model">         
+                    
+                    <input class="entrada" class="btn" type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <?php
     } 

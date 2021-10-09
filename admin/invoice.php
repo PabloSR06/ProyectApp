@@ -4,42 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Facturas</title>
 
     <link rel="stylesheet" href="/proyectapp/admin/style/style.css">
 </head>
 <body>
     <?php
         session_start();
+
+        require 'php/conectDB.php';
+        $db = conectDB();
     ?>
   
     <?php
     
     if($_SESSION == null){
+        header("location: /proyectapp/admin/index.php");
+
+    }else{  
+
     ?>
-        <div class="upper_page">
-        <h1> Iniciar sesión </h1>
-    
-        </div>
-        <div class="mid_page">
-            <div class="login_form">
-                <form action="/proyectapp/admin/php/login_act.php" method="post">
-                    <label>
-                        Correo <span class="req">*</span>
-                    </label>
-                    <input class="login_input" type="email" placeholder='Correo' name="emailWorker"/>
-                    <label>
-                        Contraseña <span class="req">*</span>
-                    </label>
-                    <input class="login_input" type="password" placeholder='Contraseña' name="passwordWorker"/>
-                    <input class="login_btn" type="submit" value="Submit"/>
-                </form>
-            </div>
-        </div>
-    <?php
-    } else{
-    ?>
-    <div class='header'>
+   <div class='header'>
         <header class='nav_bar'>
             <nav class='nav_link_nav '>
             <!--Btn from the navbar-->
@@ -72,6 +57,40 @@
                     ?>
         </header>
     </div>
+
+    <div>
+        <table class='invoice_view'>
+            <tr>
+                <th>Matricula</th>
+                <th>Precio</th>
+                <th>Nombre Cliente</th>
+            </tr>
+            <tr>
+
+        <?php
+
+
+            $sql = $db -> prepare("SELECT*FROM invoice INNER JOIN clients ON invoice.idClient = clients.idClient
+            INNER JOIN cars ON clients.idClient = cars.idClient");
+            $sql -> execute();
+            $row = $sql->fetch();
+        
+
+            echo "<td>".$row['licensePlate']."</td>";
+            echo "<td>".$row['priceInvoice']."</td>";
+            echo "<td>".$row['nameClient']."</td>";
+
+            $db = null;
+        ?>
+
+
+            </tr>   
+        </table>
+        
+
+    </div>
+
+
 
     <?php
     } 

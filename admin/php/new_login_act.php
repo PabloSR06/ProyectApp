@@ -11,6 +11,5 @@
     $sql -> bindValue(':emailWorker', $emailWorker);
     $sql -> bindValue(':passwordWorker', $passwordWorker);
     $sql->execute();
-
-
+    header("location: /proyectapp/admin/index.php");
 ?>
