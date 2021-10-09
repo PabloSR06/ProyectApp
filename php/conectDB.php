@@ -2,7 +2,7 @@
     function conectDB(){
         try {
 
-            $dbname = 'bdWorkshop';
+            $dbname = 'dbworkshop';
             $user = 'root';
             $pass = '';
             $host = 'localhost';

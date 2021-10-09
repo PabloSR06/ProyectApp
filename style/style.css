@@ -2,6 +2,9 @@ body{
     display: flex;
     height: 100%;
     margin-left: auto!important;
+
+    margin: 0;
+
     
     -webkit-box-orient: vertical!important;
     -webkit-box-direction: normal!important;
@@ -9,6 +12,23 @@ body{
     flex-direction: column!important;
 }
 
+
+.options{
+    text-align: center;
+    width: 100%;
+    background-color: #ccc;
+    /*border-bottom: 2px solid black;*/
+    border-top: 2px solid black;
+    margin: 0px;
+    height: 60px;
+}
+
+.mid_page{
+    align-items: center;
+}
+
+
+/*Footer*/
 .footer_nav{
     margin-top: auto!important;
 
@@ -36,7 +56,6 @@ body{
 }
 .nav_img_user{
     height: 45px;
-
 }
 .nav_img_house{
     height: 55px;
@@ -46,3 +65,7 @@ body{
     height: 40px;
 
 }
+.nav_img_other{
+    height: 40px;
+}
+/*End Footer*/

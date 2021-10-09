@@ -4,33 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Document</title>
 
-    
-    <link rel="stylesheet" href="/proyectapp/style/forms.css">
     <link rel="stylesheet" href="/proyectapp/style/style.css">
 
 </head>
 <body>
-    
+
 
     <div class="mid_page">
-        <div class="login_form">
-            <form action="/proyectapp/php/login_act.php" method="post">
-                <label>
-                    Correo <span class="req">*</span>
-                </label>
-                <input class="login_input" type="email" placeholder='Correo' name="login_email"/>
-                <label>
-                    Contraseña <span class="req">*</span>
-                </label>
-                <input class="login_input" type="password" placeholder='Contraseña' name="login_password"/>
-                <input class="login_btn" type="submit" value="Submit"/>
-            </form>
+        
+        <div class="options">
+                
+                <a href=""><p >sdf</p></a>
+           
         </div>
+        
+        <div class="options">
+            <a href="" >
+                <p >sdf</p>
+            </a>
+        </div> 
+
+        <div>
+            
+                <?php
+                    echo "
+                    <form  method='post' action='".$_SERVER['PHP_SELF']."'>   
+                        <button class='options' name='close_session'>Cerrar </button>
+                    </form>";
+                    session_start();
+
+                    if(isset($_POST['close_session'])){
+                        session_unset();
+                        session_destroy();
+                    }
+                    print_r($_SESSION);
+
+                ?>
+            
+        </div> 
+
     </div>
-    
+
+
+
     <div>
         <footer class='footer_nav'>
             <nav class='nav_links'>
@@ -44,12 +62,12 @@
                         <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
                     </svg>
                 </a>
-                <a href="/proyectapp/forms/login.html" class='nav_link'>
+                <a href="/proyectapp/forms/login.php" class='nav_link'>
                     <svg class='nav_img nav_img_user' xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 16 16">
                         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                     </svg>
                 </a>
-                <a href="/proyectap/options.php" class='nav_link'>
+                <a href="/proyectapp/options.php" class='nav_link'>
                     <svg class= 'nav_img nav_img_other' xmlns="http://www.w3.org/2000/svg"  fill="currentColor"  viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                         <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -59,7 +77,5 @@
             </nav>
         </footer>
     </div>
-    
-    
 </body>
 </html>
