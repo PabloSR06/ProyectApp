@@ -19,6 +19,7 @@
     ?>
         <div class="upper_page">
         <h1> Iniciar sesión </h1>
+        <h4>ADMIN</h4>
     
         </div>
         <div class="mid_page">
@@ -41,6 +42,7 @@
     ?>
     <div class='header'>
         <header class='nav_bar'>
+            <a class="brand_name" href="#">PabloSR</a>
             <nav class='nav_link_nav '>
             <!--Btn from the navbar-->
                 <ul class='nav_link_ul'>
@@ -49,7 +51,7 @@
                     </li>
 
                     <li class='nav_link_li'>
-                        <a class='nav_link' href='/proyectapp/admin/newClient.php'>Ver/Borrar</a>
+                        <a class='nav_link' href='/proyectapp/admin/newClient.php'>Nuevo cliente</a>
                     </li>
 
                     <li class='nav_link_li'>

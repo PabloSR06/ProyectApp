@@ -1,22 +1,23 @@
 <?php
-    $email = $_POST['login_email'];
-    $simple_password = $_POST['login_password']; 
+    $emailClient = $_POST['emailClient'];
+    $passwordClient = $_POST['passwordClient']; 
 
     require 'conectDB.php';
     $db = conectDB();
     
     try {
     
-        $sql = $db-> prepare("SELECT * FROM client WHERE email = :email");
-        $sql -> bindValue(':email', $email);
+        $sql = $db-> prepare("SELECT * FROM clients WHERE emailClient = :emailClient");
+        $sql -> bindValue(':emailClient', $emailClient);
         $sql->execute();
     
         $row = $sql ->fetch();
     
-        if(password_verify($simple_password, $row['login_password'])){
+        if(password_verify($passwordClient, $row['passwordClient'])){
             echo "bien";
             session_start();
-            $_SESSION['codClient'] = $row['codClient'];
+            $_SESSION['idClient'] = $row['idClient'];
+            $_SESSION['name'] = $row['nameClient']; 
             $_SESSION['email'] = $row['email'];
             $_SESSION['session_id'] = session_id();
             print_r($_SESSION);
@@ -32,10 +33,4 @@
     } catch (\Throwable $th) {
         echo $sql . "<br>" . $th->getMessage();
     }
-    
-
-
-    
-
-
 ?>

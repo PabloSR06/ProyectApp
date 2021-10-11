@@ -1,4 +1,4 @@
-body{
+h1, h4{
     text-align: center;
 }
 
@@ -32,6 +32,16 @@ padding: 8px;
 /*END Tablas*/
 
 /*NAV*/
+.brand_name{
+    font-family: 'Bad Script', cursive;
+    font-size: 1.7rem;
+    padding-left: 2.5rem ;
+    text-decoration:  none;
+    display: inline-block;
+    white-space: nowrap;
+    line-height: inherit;
+    color: white;
+}
 
 .nav_bar{
     
@@ -43,6 +53,8 @@ padding: 8px;
     display:flex;
     -webkit-box-align: center;
     align-items: center;
+    justify-content: space-between;    
+
 }
 
 
@@ -89,7 +101,6 @@ padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    text-align: center;
 }
   
 .btn {
@@ -121,4 +132,39 @@ background-color: #45a049;
 
 /*END INSERT*/
 
+/*LOGIN*/
+.login_input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+.login_btn{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.login_btn:hover {
+    background-color: #45a049;
+}
+  
+.login_form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 90%;
+    
+    
+}
+/*END LOGIN*/
 

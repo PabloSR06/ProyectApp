@@ -12,7 +12,7 @@ body{
     flex-direction: column!important;
 }
 
-
+/**/
 .options{
     text-align: center;
     width: 100%;
@@ -22,6 +22,14 @@ body{
     margin: 0px;
     height: 60px;
 }
+.btn_options{
+    border-right: none;
+    border-left: none;
+}
+
+
+/**/
+
 
 .mid_page{
     align-items: center;
@@ -37,8 +45,8 @@ body{
 
     position: fixed;
     bottom: 0;
-    right: 0;
     left: 0;
+    right: 0;
     z-index: 1030;
 
     background-color: black;
@@ -72,3 +80,7 @@ body{
     height: 40px;
 }
 /*End Footer*/
+
+h1{
+    text-align: center;
+}

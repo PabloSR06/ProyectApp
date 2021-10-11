@@ -1,15 +1,15 @@
 <?php
-    $email = $_POST['login_email'];
-    $login_password = password_hash( $_POST['login_password'], PASSWORD_DEFAULT); 
+    $emailClient = $_POST['emailClient'];
+    $passwordClient = password_hash( $_POST['passwordClient'], PASSWORD_DEFAULT); 
 
     require 'conectDB.php';
     
 
     $db = conectDB();
 
-    $sql = $db-> prepare("INSERT INTO client (email, login_password) VALUES (:email, :login_password)");
-    $sql -> bindValue(':email', $email);
-    $sql -> bindValue(':login_password', $login_password);
+    $sql = $db-> prepare("INSERT INTO clients (emailClient, passwordClient) VALUES (:emailClient, :passwordClient)");
+    $sql -> bindValue(':emailClient', $emailClient);
+    $sql -> bindValue(':passwordClient', $passwordClient);
     $sql->execute();
 
 

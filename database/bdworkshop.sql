@@ -29,11 +29,13 @@ CREATE TABLE cars(
 CREATE TABLE carIN(
     idCarIN INT NOT NULL AUTO_INCREMENT,
     CONSTRAINT PK_IDCARIN PRIMARY KEY (idCarIN),
-    finishWork BOOLEAN NOT NULL,
-    outWork BOOLEAN NOT NULL,
+    outWork INT(3) NOT NULL,
     noteWork NVARCHAR(500) NOT NULL,
     idCar INT NOT NULL,
-    CONSTRAINT FK_CARIN FOREIGN KEY (idCar) REFERENCES cars(idCar)
+    CONSTRAINT FK_CARIN FOREIGN KEY (idCar) REFERENCES cars(idCar),
+    toDo VARCHAR(250) NOT NULL,
+    diaEntrada DATE NOT NULL
+
 );
 
 CREATE TABLE invoice(
@@ -49,4 +51,12 @@ CREATE TABLE invoice(
 );
 
 INSERT INTO clients (nameClient, surnameClient) VALUES ("Nombre", "Apellido");
-INSERT INTO cars (licensePlate, brand, idClient) VALUES ("GHTG434", "marca", 1);
+INSERT INTO clients (nameClient, surnameClient) VALUES ("Nombre2", "Apellido2");
+
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTG434", "marca", "fs", 1);
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE324", "dssdfa", "fasdfs", 1);
+
+INSERT INTO carIN (outWork, noteWork, toDo, idCar, diaEntrada) VALUES (0, 'bajo aceite', 'revicion', 1, CURDATE());
+
+SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar INNER JOIN clients ON cars.idClient = clients.idClient WHERE clients.idClient = 2;
+SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar WHERE cars.idClient = 2;
