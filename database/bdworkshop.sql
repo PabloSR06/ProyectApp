@@ -9,6 +9,7 @@ CREATE TABLE clients(
     emailClient VARCHAR(100) NOT NULL,
     passwordClient VARCHAR(200) NOT NULL 
 );
+ALTER TABLE `clients` ADD UNIQUE(`emailClient`);
 CREATE TABLE workers(
     idWorker INT NOT NULL AUTO_INCREMENT, 
     CONSTRAINT PK_IDWORKER PRIMARY KEY(idWorker),
