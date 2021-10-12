@@ -18,7 +18,7 @@
             session_start();
             print_r($_SESSION);
 
-            require 'php/conectDB.php';
+            require '../php/conectDB.php';
             $db = conectDB();
         ?>
     </div>

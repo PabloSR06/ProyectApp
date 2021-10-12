@@ -12,28 +12,31 @@ body{
     flex-direction: column!important;
 }
 
-/**/
+/*User Options*/
 .options{
     text-align: center;
-    width: 100%;
-    background-color: #ccc;
-    /*border-bottom: 2px solid black;*/
-    border-top: 2px solid black;
-    margin: 0px;
-    height: 60px;
-}
-.btn_options{
-    border-right: none;
-    border-left: none;
-}
+    background-color: aquamarine;
+    width: 80%;
+    margin: auto;
+ }
+ .option{
+     border-top: 1px solid black;
+ }
+ .option a{
+     text-decoration: none;
+     font-size: 30px;
+ }
+ .option a p{
+     margin-top: 0px;
+     margin-bottom: 0px;
+ }
+ 
 
 
-/**/
+/*END User Options*/
 
 
-.mid_page{
-    align-items: center;
-}
+
 .upper_page{
     text-align: center;
 }

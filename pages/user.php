@@ -4,51 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>user</title>
 
     <link rel="stylesheet" href="/proyectapp/style/style.css">
 
 </head>
 <body>
+    <?php
+        session_start();
+    ?>
 
 
     <div class="mid_page ">
 
-        <div>
-            <?php  echo "<p>".$_SESSION['name']."</p>" ?>
-        </div>
-        
         <div class="options">
+            <div class="option_name">
+                <?php  echo "<p>".$_SESSION['name']."</p>" ?>
+            </div>
+            <div>
+                <div class="option">
+                    <a href=""><p >sdf</p></a>  
+                </div>
                 
-                <a href=""><p >sdf</p></a>
-           
+                <div class="option">
+                    <a href="" >
+                        <p >sdf</p>
+                    </a>
+                </div> 
+            
+                <div class="option">
+                    <a href="/proyectapp/php/close.php">
+                        <p>Cerrar</p>
+                    </a>
+                </div> 
+            </div>         
         </div>
-        
-        <div class="options">
-            <a href="" >
-                <p >sdf</p>
-            </a>
-        </div> 
-
-        <div>
-            
-                <?php
-                    echo "
-                    <form  method='post' action='".$_SERVER['PHP_SELF']."'>   
-                        <button class='options btn_options'  name='close_session'>Cerrar</button>
-                    </form>";
-                    session_start();
-
-                    if(isset($_POST['close_session'])){
-                        session_unset();
-                        session_destroy();
-                    }
-                    print_r($_SESSION);
-
-                ?>
-            
-        </div> 
-
+        <?php print_r($_SESSION);?>
     </div>
 
 
