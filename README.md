@@ -7,7 +7,7 @@ The basic idea is to make WorkShop management app where you (as the worker) get 
 
 ## Database
 
-####client
+###client
 The table clients have it's diferents fields, important to see the lenght of the password and the email, they are that long for save the encrypted password and the posibility of an email lenght could get up for more that 250 
 
 
