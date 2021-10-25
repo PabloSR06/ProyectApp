@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminos y condiciones</title>
+    <title>Contacto</title>
 
     <link rel="stylesheet" href="/proyectapp/style/style.css">
+    <link rel="stylesheet" href="/proyectapp/style/forms.css">
 </head>
 <body>
-    <h1>Terminos y condiciones</h1>
+    <h1>Contacto</h1>
 
+    <div class="mid_page">
+        <div class="login_form">
+            <form action="/proyectapp/php/contacto.php" method="post">
+                <label>Nombre:</label>
+                <input class="login_input" type="text" placeholder='Nombre' name="nameContact" required/>
+
+                <label>Correo:</label>
+                <input class="login_input" type="email" placeholder='Correo' name="emailContact" required/>
+
+                <label>Asunto:</label>
+                <input class="login_input" type="text" placeholder='Correo' name="subjectContact" required/>
+
+                <label>Mensaje:</label>
+                      
+                <textarea class="login_input message" placeholder='Mensaje' name="message" required></textarea><br>
+
+                <input class="login_btn" type="submit" value="Submit"/>
+            </form>
+        </div>
+    </div>
+
+
+    
     <div>
         <footer class='footer_nav'>
             <nav class='nav_links'>
@@ -46,5 +70,7 @@
             </nav>
         </footer>
     </div>
+
+
 </body>
 </html>

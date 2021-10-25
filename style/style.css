@@ -91,3 +91,10 @@ body{
 h1{
     text-align: center;
 }
+
+.text{
+   
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 80px;
+}

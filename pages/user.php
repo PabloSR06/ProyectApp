@@ -19,15 +19,15 @@
 
         <div class="options">
             <div class="option_name">
-                <?php  echo "<p>".$_SESSION['name']. 'dsds'."</p>" ?>
+                <?php  echo "<p>".$_SESSION['name']. ''."</p>" ?>
             </div>
             <div>
                 <div class="option">
-                    <a href=""><p >sdf</p></a>  
+                    <a href="/proyectapp/forms/contact.html"><p >Contacto</p></a>  
                 </div>
                 
                 <div class="option">
-                    <a href="/proyectapp/pages/conditions.html">
+                    <a href="/proyectapp/pages/policies.html">
                         <p >Terminos y Condiciones</p>
                     </a>
                 </div> 

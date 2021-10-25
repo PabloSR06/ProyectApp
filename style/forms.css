@@ -25,9 +25,9 @@
   
 .login_form {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #cecece;
     padding: 20px;
-    width: 90%;
+    width: 87%;
     
     
 }
@@ -37,3 +37,7 @@
     justify-content: center;
 }
 
+.message{
+    resize: vertical;
+    height: 85px;
+}
