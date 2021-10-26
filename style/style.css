@@ -93,8 +93,9 @@ h1{
 }
 
 .text{
-   
     padding-left: 13px;
     padding-right: 13px;
+}
+.botton-down{
     padding-bottom: 80px;
 }

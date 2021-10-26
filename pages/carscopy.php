@@ -5,24 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="/proyectapp/style/style.css">
+    <link rel="stylesheet" href="/proyectapp/style/dropdown.css">
 </head>
 <body>
 
     <div>
-        <h1>Bienvenido1</h1>
+        <h1>COCHES</h1>
         <?php
             session_start();
             print_r($_SESSION);
-        ?>
-        
 
-   
+            require '../php/conectDB.php';
+            $db = conectDB();
+        ?>
     </div>
 
+    <div>
+        <div class="dropdown">
+            <div id="dd">
+                <a href="#" id="button">Matricula</a>
+                <ul class="ul_dropdown">
+                    <div class="li_dropdown">Marca: Hyunday Modelo:Kona</div>
+                    
+                </ul>
+            </div><br>
 
+            
+                <?php
+                    $sql =$db -> prepare("SELECT * FROM cars WHERE idClient = :idClient");
+
+                    $sql -> bindValue(':idClient', $_SESSION['idClient']);
+                    $sql -> execute();
+
+                    while($row = $sql->fetch()) {
+                        echo"
+                        <div id='dd'>
+                            <a id='button'>".$row['licensePlate']."</a>
+                            <ul class='ul_dropdown'>
+                                <div class='li_dropdown'>Marca: ".$row['brand']." Modelo:".$row['model']."</div>
+                            </ul>
+                        </div>";
+            
+                    }
+                ?>
+                
+            <br>
+
+           
+        </div>
+    </div>
 
 
     <div>
@@ -60,5 +94,7 @@
             </nav>
         </footer>
     </div>
+
+    <script src="/proyectapp/js/dropdown.js"></script>
 </body>
 </html>

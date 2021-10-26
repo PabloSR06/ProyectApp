@@ -1,54 +1,45 @@
-.dropdown{
-    text-align: center;
-
+.dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
 }
-.ul_dropdown{
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: relative;
+    align-items: center;
+}
+
+.dropdown-content {
     display: none;
     position: relative;
-    top: -55px;
-    padding: 55px 0 0 0;
-    margin: 0;
-    width: 100%;
-
-}
-.ul_dropdown:hover{
-    display: block; 
-
-}
-.li_dropdown{
-    background: #ddd;
-    padding: 10px;
-    list-style: none;
-
-
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+   /* z-index: 1;*/
+ 
 }
 
-#button{
-    display: inline-block;
-    padding: 10px;
-    background: rgb(173, 173, 173);
-    color: white;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
     text-decoration: none;
-    width:unset;
-
-
-    text-align: center;
-}
-#dd{
-    display: inline-block;
-    width: 100%;
-
-}
-#dd:active ul{
     display: block;
     
-} 
-#dd:active ul:hover{
-    display: block;
 }
-#dd:active #button{
-    display: inline-block;
-    padding: 10px;
-    color: white;
-   
+
+.dropdown a:hover {
+    background-color: #ddd
+}
+
+.show {
+    display: block;
 }
