@@ -1,71 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <title>Cars</title>
+    <style>
+        .if {
+            display: block;
+            border: none;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css">
 
     <link rel="stylesheet" href="/proyectapp/style/style.css">
-    <link rel="stylesheet" href="/proyectapp/style/dropdown.css">
+    <link rel="stylesheet" href="/proyectapp/style/alert.css">
 </head>
 
 <body>
-
-    <div>
-        <h1>COCHES</h1>
-        <?php
-            session_start();
-            print_r($_SESSION);
-
-            require '../php/conectDB.php';
-            $db = conectDB();
-        ?>
-        <p class="text">Aqui encontraras una lista con todos los coches que tienes registrados con nosotros, dale click sobre la matricula para ver más información</p>
-    </div>
-
-    <div>
-
-        <noscript>
-            <a href="">
-                Ha ocurrido un error con JavaScript
-            </a>
+    <div class="alert_div">
+        <div class="color_back"></div>
+        
+        <div class="alert">
+          <div class="alert_content">
+            <a href="">OpenStreetMap</a>
             
-        </noscript>
-
-        <?php
-                    $sql =$db -> prepare("SELECT * FROM cars WHERE idClient = :idClient");
-
-                    $sql -> bindValue(':idClient', $_SESSION['idClient']);
-                    $sql -> execute();
-                    $cantidad = 0;
-
-                    while($row = $sql->fetch()) {
-                        $cantidad++;
-                        echo"
-                        <div class='dropdown'>
-                            <button onclick='myFunction(this);' class='dropbtn'>".$row['licensePlate']."</button>
-                            <div id='myDropdown1' class='dropdown-content'>
-                                <a href=''>23e</a>
-                                <a href=''>A33t</a>
-                                <a href=''>Marca: ".$row['brand']." Modelo:".$row['model']."</a>
-                            </div>
-                        </div>
-                        ";
-            
-                    }
-                    if($cantidad == 0){
-                        echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
-                    }
-                ?>
-
-        <br>
-
-         <div class="botton-down"></div>           
+            <a href="">Compartir</a>
+            </div>
+          
+        </div>
     </div>
-    </div>
+      
+    <button class="info_mapa btn_alerta">Alerta</button>
+    
+    <div id="mapid" class="if"></div>
 
 
     <div>
@@ -103,7 +77,7 @@
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                     </svg>
                 </a>
-                <a href="/proyectapp/pages/" class='nav_link'>
+                <a href="/proyectapp/pages/maps.html" class='nav_link'>
                     <svg class="nav_img" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-geo-alt"
                         viewBox="0 0 16 16">
                         <path
@@ -116,37 +90,48 @@
         </footer>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script>
+        var mymap = L.map('mapid').setView([28.463439, -16.289347], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 29,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+
+
+        L.marker([28.463439, -16.289347]).addTo(mymap)
+            .bindPopup("<b>Taller</b><br />Calle taller n3").openPopup();
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("Latitud, Longitud " + e.latlng.toString())
+                .openOn(mymap);
+        }
+
+        mymap.on('click', onMapClick);
+    </script>
     <script src="/proyectapp/js/jquery-3.6.0.min.js"></script>
 
     <script>
-        function myJQueryFunction(element) {
-            var elements = ".dropdown-content";
-            $(elements).removeClass('show');
-            $(element).next(elements).toggleClass("show");
-        }
 
-        function myFunction(element) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                dropdowns[i].classList.remove('show');
-            }
-            element.nextSibling.nextSibling.classList.toggle("show");
-        }
+        $('.btn_alerta').click(function () {
+            $('.alert_div').fadeIn(100);
+        });
 
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
+        $('.alert_div').click(function () {
+            $(this).fadeOut(100);
+        });
+
+
     </script>
+
 </body>
 
 </html>

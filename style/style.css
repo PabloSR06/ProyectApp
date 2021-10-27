@@ -61,14 +61,15 @@ body{
 /*Footer*/
 .footer_nav{
     margin-top: auto!important;
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1030;
+    position: fixed;
+    z-index: 3030;
     background-color: black;
     border-radius: 10px 10px  0px 0px;
 }
+
 .nav_links{
     text-align: center;
 }
