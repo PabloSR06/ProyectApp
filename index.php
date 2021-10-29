@@ -21,7 +21,7 @@
         <?php
             $salida = password_hash( '@@@', PASSWORD_DEFAULT);
 
-            echo $salida;
+            
         ?>
 
         
