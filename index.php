@@ -17,6 +17,13 @@
             session_start();
             print_r($_SESSION);
         ?>
+
+        <?php
+            $salida = password_hash( '@@@', PASSWORD_DEFAULT);
+
+            echo $salida;
+        ?>
+
         
 
    

@@ -42,23 +42,34 @@
                     $sql -> execute();
                     $cantidad = 0;
 
-                    while($row = $sql->fetch()) {
+                   
+                    while($row = $sql->fetch()){
                         $cantidad++;
-                        echo"
-                        <div class='dropdown'>
-                            <button onclick='myFunction(this);' class='dropbtn'>".$row['licensePlate']."</button>
-                            <div id='myDropdown1' class='dropdown-content'>
-                                <a href=''>23e</a>
-                                <a href=''>A33t</a>
-                                <a href=''>Marca: ".$row['brand']." Modelo:".$row['model']."</a>
-                            </div>
-                        </div>
-                        ";
+                        $myJSON = json_encode($row);
+
+                        echo $myJSON;
+                        
+                    }
+                  
+                   
+
+                    // while($row = $sql->fetch()) {
+                    //     $cantidad++;
+                    //     echo"
+                    //     <div class='dropdown'>
+                    //         <button onclick='myFunction(this);' class='dropbtn'>".$row['licensePlate']."</button>
+                    //         <div id='myDropdown1' class='dropdown-content'>
+                    //             <a href=''>23e</a>
+                    //             <a href=''>A33t</a>
+                    //             <a href=''>Marca: ".$row['brand']." Modelo:".$row['model']."</a>
+                    //         </div>
+                    //     </div>
+                    //     ";
             
-                    }
-                    if($cantidad == 0){
-                        echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
-                    }
+                    // }
+                    // if($cantidad == 0){
+                    //     echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
+                    // }
                 ?>
 
         <br>

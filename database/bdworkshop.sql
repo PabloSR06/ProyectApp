@@ -51,7 +51,7 @@ CREATE TABLE invoice(
     CONSTRAINT FK_INVOICEINCAR FOREIGN KEY (idCarIN) REFERENCES carIN(idCarIN)
 );
 
-INSERT INTO clients (nameClient, surnameClient) VALUES ("Nombre", "Apellido");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre", "Apellido", "correo@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
 INSERT INTO clients (nameClient, surnameClient) VALUES ("Nombre2", "Apellido2");
 
 INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTG434", "marca", "fs", 1);
