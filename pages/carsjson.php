@@ -41,26 +41,63 @@
         $sql->execute();
         $cantidad = 0;
 
-
         $myJSON = "{";
         $myJSON .= '"coches":[';
 
         $i = 0;
-        while($row = $sql->fetch()){
+        $row = $sql->fetchAll();
+        $count = count($row);
+
+        while($i<$count){
             $myJSON .= '{';
+
             $myJSON .= '"licensePlate":';
-            $myJSON .= '"'.$row['licensePlate'].'"';
+            $myJSON .= '"'.$row[$i]['licensePlate'].'"';
+
+            $myJSON .= ',';
+
+            $myJSON .= '"brand":';
+            $myJSON .= '"'.$row[$i]['brand'].'"';
+
+            $myJSON .= ',';
+
+            $myJSON .= '"model":';
+            $myJSON .= '"'.$row[$i]['model'].'"';
+
             $myJSON .= '}';
-            echo count($row);
-            print_r($row);
-            $i++;   
+
+            if(!($i == $count-1)){
+                $myJSON .= ',';
+            }
+
+            $i++;
         }
-        print_r($row);
 
         $myJSON .= '],';
-        $myJSON .= '"success":'.$i;
+        $myJSON .= '"success":'.$i  ;
         $myJSON .= '}';
         echo $myJSON;
+
+
+        // $myJSON = "{";
+        // $myJSON .= '"coches":[';
+
+        // $i = 0;
+        // while($row = $sql->fetch()){
+        //     $myJSON .= '{';
+        //     $myJSON .= '"licensePlate":';
+        //     $myJSON .= '"'.$row['licensePlate'].'"';
+        //     $myJSON .= '}';
+        //     echo count($row);
+        //     print_r($row);
+        //     $i++;   
+        // }
+        // print_r($row);
+
+        // $myJSON .= '],';
+        // $myJSON .= '"success":'.$i;
+        // $myJSON .= '}';
+        // echo $myJSON;
 
 
         //$row = $sql->fetchAll();

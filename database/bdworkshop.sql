@@ -52,10 +52,18 @@ CREATE TABLE invoice(
 );
 
 INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre", "Apellido", "correo@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
-INSERT INTO clients (nameClient, surnameClient) VALUES ("Nombre2", "Apellido2");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre2", "Apellido2", "correo2@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre3", "Apellido3", "correo3@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
+
 
 INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTG434", "marca", "fs", 1);
 INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE324", "dssdfa", "fasdfs", 1);
+
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE435", "dssdfa", "fasdfs", 3);
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE334", "dssdfa", "fasdfs", 3);
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE111", "dssdfa", "fasdfs", 3);
+INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE322", "dssdfa", "fasdfs", 3);
+
 
 INSERT INTO carIN (outWork, noteWork, toDo, idCar, diaEntrada) VALUES (0, 'bajo aceite', 'revicion', 1, CURDATE());
 
