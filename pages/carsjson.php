@@ -34,51 +34,26 @@
                 Ha ocurrido un error con JavaScript
             </a>
         </noscript>
+        
+            
 
         <?php
-        $sql = $db->prepare("SELECT * FROM cars WHERE idClient = :idClient");
 
-        $sql->bindValue(':idClient', $_SESSION['idClient']);
-        $sql->execute();
-        $cantidad = 0;
 
-        $myJSON = "{";
-        $myJSON .= '"coches":[';
+            try {
+               
+                require '../php/query/querys.php';
+                if(isset($_SESSION['idClient']) ){
+                    echo query_cars($db, $_SESSION['idClient']);
+                }else{
+                    echo "A ocurrido un error";
+                }
 
-        $i = 0;
-        $row = $sql->fetchAll();
-        $count = count($row);
-
-        while ($i < $count) {
-            $myJSON .= '{';
-
-            $myJSON .= '"licensePlate":';
-            $myJSON .= '"' . $row[$i]['licensePlate'] . '"';
-
-            $myJSON .= ',';
-
-            $myJSON .= '"brand":';
-            $myJSON .= '"' . $row[$i]['brand'] . '"';
-            
-            $myJSON .= ',';
-
-            $myJSON .= '"model":';
-            $myJSON .= '"' . $row[$i]['model'] . '"';
-
-            $myJSON .= '}';
-
-            if (!($i == $count - 1)) {
-                $myJSON .= ',';
+                
+            } catch (\Throwable $th) {
+                echo "A ocurrido un error";
             }
-
-            $i++;
-        }
-
-        $myJSON .= '],';
-        $myJSON .= '"success":' . $i;
-        $myJSON .= '}';
-        echo $myJSON;
-
+            
 
         ?>
 
