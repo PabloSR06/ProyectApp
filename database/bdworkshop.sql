@@ -35,7 +35,7 @@ CREATE TABLE carIN(
     idCar INT NOT NULL,
     CONSTRAINT FK_CARIN FOREIGN KEY (idCar) REFERENCES cars(idCar),
     toDo VARCHAR(250) NOT NULL,
-    diaEntrada DATE NOT NULL
+    dayIN DATE NOT NULL
 
 );
 
@@ -65,7 +65,9 @@ INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE111", "dssd
 INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTE322", "dssdfa", "fasdfs", 3);
 
 
-INSERT INTO carIN (outWork, noteWork, toDo, idCar, diaEntrada) VALUES (0, 'bajo aceite', 'revicion', 1, CURDATE());
+INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo aceite', 'revicion', 1, 2021-10-12);
+INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo1 aceite', 'revicion1', 1, 2021-10-11);
+INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo2 aceite', 'revicion2', 1, CURDATE());
 
 SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar INNER JOIN clients ON cars.idClient = clients.idClient WHERE clients.idClient = 2;
 SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar WHERE cars.idClient = 2;
