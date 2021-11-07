@@ -36,6 +36,18 @@
     
 }
 
+.dropbtn1 {
+    color: black;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 0px;
+    
+}
+
+
+
 .dropdown a:hover {
     background-color: #ddd
 }

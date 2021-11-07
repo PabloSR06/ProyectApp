@@ -14,13 +14,15 @@
 
 <body>
     <div>
-        <h1>COCHES</h1>
+        <h1>COCHE X</h1>
         <?php
         session_start();
         print_r($_SESSION);
 
         require '../php/conectDB.php';
         $db = conectDB();
+
+        $idCar = $_POST['idCar'];
         ?>
         <p class="text">Aqui encontraras una lista con todos los coches que tienes registrados con nosotros, dale click
             sobre la matricula para ver más información</p>
@@ -34,16 +36,12 @@
             </a>
         </noscript>
 
-
-
         <?php
             try { 
                 require '../php/query/querys.php';
-                if(isset($_SESSION['idClient']) ){
-                    $json =  query_cars2($db, $_SESSION['idClient']);
-                }else{
-                    echo "A ocurrido un error 1";
-                }
+                
+                $json =  query_carsIN($db, $idCar);
+                
             } catch (\Throwable $th) {
                 echo "A ocurrido un error";
             }
@@ -55,29 +53,22 @@
             if($array->success == 0){
                 echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
             }else{
+
                 while($i < $count){
 
-                    $exit=  $array->cars[$i];
+                     $exit=  $array->carIN[$i];
   
-                    echo"
-                        <div class='dropdown'>
-                            <button onclick='myFunction(this);' class='dropbtn'>".$exit->licensePlate."</button>
-                            <div id='myDropdown1' class='dropdown-content'>
-                                <a>
-                                    <form action='info_cars.php' method='post'>
-                                        <input value=".$exit->idCar." type='hidden' name='idCar'>  
-                                        <button class='dropbtn1'>Editar</button>  
-                                    </form>
-                                </a>
-                                <a href=''>Marca: ".$exit->brand." Modelo:".$exit->model."</a>
-                            </div>
-                        </div>";
-
+                    echo $exit->outWork;
+                    echo $exit->noteWork;
+                    echo $exit->toDo;
+                    echo $exit->dayIN;
+                    echo "<br>";
+    
                     $i++;
                 }
             }
+
             
-            echo "<button class='dropbtn1'>sdfsd</button>";
             
         ?>
 
@@ -136,37 +127,8 @@
         </footer>
     </div>
 
-    <script src="/proyectapp/js/jquery-3.6.0.min.js"></script>
 
-    <script>
-    function myJQueryFunction(element) {
-        var elements = ".dropdown-content";
-        $(elements).removeClass('show');
-        $(element).next(elements).toggleClass("show");
-    }
-
-    function myFunction(element) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].classList.remove('show');
-        }
-        element.nextSibling.nextSibling.classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-    </script>
+    
 </body>
 
 </html>
