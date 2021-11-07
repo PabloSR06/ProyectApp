@@ -44,15 +44,20 @@
                
                 require '../php/query/querys.php';
                 if(isset($_SESSION['idClient']) ){
-                    echo query_cars($db, $_SESSION['idClient']);
+                    $json =  query_cars($db, $_SESSION['idClient']);
                 }else{
-                    echo "A ocurrido un error";
-                }
+                    echo "A ocurrido un error 1";
 
-                
+                }
+ 
             } catch (\Throwable $th) {
                 echo "A ocurrido un error";
             }
+            echo $json;
+            //echo json_decode($json);
+            $ss = json_decode($json);
+            echo "/////////////////////////////////////////////////////////////////////////////";
+            print_r($ss); 
             
 
         ?>
