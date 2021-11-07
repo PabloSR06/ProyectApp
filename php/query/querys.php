@@ -9,7 +9,7 @@
             $sql->execute();
 
             $myJSON = "{";
-            $myJSON .= '"coches":[';
+            $myJSON .= '"cars":[';
 
             $i = 0;
             $row = $sql->fetchAll();
