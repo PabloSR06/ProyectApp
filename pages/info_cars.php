@@ -14,34 +14,30 @@
 
 <body>
     <div>
-        <h1>COCHE X</h1>
+
         <?php
         session_start();
-        print_r($_SESSION);
-
         require '../php/conectDB.php';
         $db = conectDB();
 
         $idCar = $_POST['idCar'];
+        $licensePlate = $_POST['licensePlate'];
+
+        echo "<h1>$licensePlate</h1>";
         ?>
-        <p class="text">Aqui encontraras una lista con todos los coches que tienes registrados con nosotros, dale click
-            sobre la matricula para ver más información</p>
+        <p class="text">Aqui encont</p>
     </div>
 
     <div>
-
         <noscript>
-            <a href="">
+            <a>
                 Ha ocurrido un error con JavaScript
             </a>
         </noscript>
-
         <?php
             try { 
                 require '../php/query/querys.php';
-                
-                $json =  query_carsIN($db, $idCar);
-                
+                $json =  query_carsIN($db, $idCar);  
             } catch (\Throwable $th) {
                 echo "A ocurrido un error";
             }
@@ -50,26 +46,68 @@
             $count = $array->success;
             $i = 0;
 
+            $salida111= $array->success;
+
             if($array->success == 0){
-                echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
+                echo "<p class='text' style='text-align: center;'>No hay informacion sobre este coche</p>";
             }else{
+
+                $exit = $array->carIN[$i];
+                echo "<h3>Ultimo Ingreso</h3>";
+                echo $exit->outWork;
+                echo "<div class='continer'> 
+                        <div>
+                            <div class='car_entry'>
+                                <h5>Razon de entrada:</h5>
+                                <p>$exit->toDo</p>
+                            </div>
+                            <div class='car_date'>
+                                <h5>Fecha de entrada:</h5>
+                                <p>$exit->dayIN</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class='car_notes'>
+                                <h5>Notas:</h5>
+                                <p class='text'>$exit->noteWork</p>
+                            </div>
+                        </div>
+                    </div>";
+                
+                echo "<br>";
+                echo "<h3>Historial de Ingresos</h3>";
+                $i++;
+
 
                 while($i < $count){
 
-                     $exit=  $array->carIN[$i];
+                    $exit=  $array->carIN[$i];
   
-                    echo $exit->outWork;
-                    echo $exit->noteWork;
-                    echo $exit->toDo;
-                    echo $exit->dayIN;
+                    echo "<div class='continer'> 
+                            <div>
+                                <div class='car_entry'>
+                                    <h5>Razon de entrada:</h5>
+                                    <p>$exit->toDo</p>
+                                </div>
+                                <div class='car_date'>
+                                    <h5>Fecha de entrada:</h5>
+                                    <p>$exit->dayIN</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div>
+                                <div class='car_notes'>
+                                    <h5>Notas:</h5>
+                                    <p class='text'>$exit->noteWork</p>
+                                </div>
+                            </div>
+                        </div>";
                     echo "<br>";
     
                     $i++;
                 }
-            }
-
-            
-            
+            }    
         ?>
 
         <br>
@@ -127,8 +165,28 @@
         </footer>
     </div>
 
+    <!--
+    echo "<div class='continer'> 
+            <div>
+                <div class='car_entry'>
+                    <h5>Razon de entrada:</h5>
+                    <p>$exit->toDo</p>
+                </div>
+                <div class='car_date'>
+                    <h5>Fecha de entrada:</h5>
+                    <p>$exit->dayIN</p>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class='car_notes'>
+                    <h5>Notas:</h5>
+                    <p class='text'>$exit->noteWork</p>
+                </div>
+            </div>
+        </div>";
+                -->
 
-    
 </body>
 
 </html>

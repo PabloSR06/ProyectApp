@@ -3,6 +3,12 @@ h1{
     font-family:'Oswald', sans-serif; 
     text-align: center;
 }
+h4{
+    text-align: center  ;
+}
+h3{
+    padding-left: 15px  ;
+}
 body{
     background-color: rgb(241, 241, 241);
     display: flex;
@@ -103,3 +109,52 @@ body{
 .botton-down{
     padding-bottom: 80px;
 }
+
+/*INFO CARS*/
+
+.continer{
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    padding-bottom: 0.6rem; 
+    padding-top: 0.6rem; 
+    background: rgb(108,115,159);
+    background: radial-gradient(circle, rgba(108,115,159,1) 10%, rgba(84,92,161,1) 69%);  
+}
+.car_entry{
+    display: inline-block;
+    width: 60%;
+    border-radius: 1.2rem;
+    border-width: 0rem;
+    border-bottom-width: 0.05rem;
+    border-style: solid;
+}
+.car_date{
+    display: inline-block;
+    width: 35%;
+    border-radius: 1.2rem;
+    border-width: 0rem;
+    border-top-width: 0.05rem;
+    border-style: solid;
+}
+.car_notes{
+    display: inline-block;
+    width: 95%;
+    text-align: left;
+    border-radius: 1.2rem;
+    border-width: 0rem;
+    border-left-width: 0.05rem;
+    border-right-width: 0.05rem;
+    border-style: solid;
+}
+h5{
+    text-align: left;
+    margin-bottom: 0px;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+/*END INFO CARS*/

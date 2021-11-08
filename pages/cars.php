@@ -63,22 +63,20 @@
                         <div class='dropdown'>
                             <button onclick='myFunction(this);' class='dropbtn'>".$exit->licensePlate."</button>
                             <div id='myDropdown1' class='dropdown-content'>
-                                <a>
-                                    <form action='info_cars.php' method='post'>
-                                        <input value=".$exit->idCar." type='hidden' name='idCar'>  
-                                        <button class='dropbtn1'>Editar</button>  
-                                    </form>
-                                </a>
-                                <a href=''>Marca: ".$exit->brand." Modelo:".$exit->model."</a>
+                    
+                                <form action='info_cars.php' method='post'>
+                                    <input value=".$exit->idCar." type='hidden' name='idCar'>  
+                                    <input value=".$exit->licensePlate." type='hidden' name='licensePlate'>  
+                                    <button class='dropbtn1'>Ver todos los registros</button>  
+                                </form>
+                                
+                                <a>Marca: ".$exit->brand." Modelo:".$exit->model."</a>
                             </div>
                         </div>";
 
                     $i++;
                 }
-            }
-            
-            echo "<button class='dropbtn1'>sdfsd</button>";
-            
+            }            
         ?>
 
         <br>

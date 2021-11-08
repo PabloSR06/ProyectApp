@@ -16,6 +16,7 @@
 .dropdown {
     position: relative;
     align-items: center;
+    text-align: center;
 }
 
 .dropdown-content {
@@ -32,26 +33,23 @@
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-    
+    display: block;  
 }
-
 .dropbtn1 {
     color: black;
-    text-align: left;
     border: none;
     cursor: pointer;
     width: 100%;
-    padding: 0px;
-    
+    padding: 16px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-
-
+.dropbtn1:hover {
+    background-color: #ddd
+}
 .dropdown a:hover {
     background-color: #ddd
 }
-
 .show {
     display: block;
 }
