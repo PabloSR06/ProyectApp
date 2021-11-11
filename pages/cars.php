@@ -53,7 +53,7 @@
             $i = 0;
 
             if($array->success == 0){
-                echo "<p class='text' style='text-align: center;'>Todavia no tienes ningun coche registrado</p>";
+                echo "<p class='text' style='text-align: center;'>Todavía no tienes ningún coche registrado</p>";
             }else{
                 while($i < $count){
 
