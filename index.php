@@ -15,18 +15,7 @@
         <h1>Bienvenido</h1>
         <?php
             session_start();
-            print_r($_SESSION);
         ?>
-
-        <?php
-            $salida = password_hash( '@@@', PASSWORD_DEFAULT);
-
-            
-        ?>
-
-        
-
-   
     </div>
 
 
