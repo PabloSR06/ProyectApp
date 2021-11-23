@@ -14,19 +14,13 @@
         $row = $sql ->fetch();
     
         if(password_verify($passwordClient, $row['passwordClient'])){
-            echo "bien";
             session_start();
             $_SESSION['idClient'] = $row['idClient'];
             $_SESSION['name'] = $row['nameClient']; 
             $_SESSION['email'] = $row['emailClient'];
             $_SESSION['session_id'] = session_id();
-            print_r($_SESSION);
             header("location: ../index.php");
-
-        }else{
-            echo "no bien";
-
-        }   
+        }
 
         $db = null; 
     
