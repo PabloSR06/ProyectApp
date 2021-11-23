@@ -41,3 +41,10 @@
     resize: vertical;
     height: 85px;
 }
+
+
+
+input:invalid,
+textarea:invalid {
+    background: red;
+}
