@@ -1,23 +1,85 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home</title>
+    <title>Document</title>
 
+
+    <link rel="stylesheet" href="/proyectapp/style/forms.css">
     <link rel="stylesheet" href="/proyectapp/style/style.css">
+
 </head>
+
 <body>
 
-    <div>
-        <h1>Bienvenido</h1>
-        
+    <div class="upper_page">
+        <h1> Iniciar sesión </h1>
+
     </div>
+   
+    <div class="mid_page">
+        <div id="form" class="login_form">
+            <div id="resultado"></div>
+            <form action="/proyectapp/php/login_act.php" method="post" id="login_form" onkeypress="enterEnviar(event);">
+
+
+
+
+                <label>
+                    Correo <span class="req">*</span>
+                </label>
+                <input class="login_input" type="email" placeholder='Correo' name="emailClient" id="email" />
+                <label>
+                    Contraseña <span class="req">*</span>
+                </label>
+                <input class="login_input" type="password" placeholder='Contraseña' name="passwordClient"
+                    id="password" />
+
+
+                <input type="submit"  value="Enviar" class="login_btn">
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("login_form").addEventListener('submit', validarFormulario);
+        });
+
+        function validarFormulario(evento) {
+            evento.preventDefault();
+            //var email = document.getElementById('email').value;
+            //var password = document.getElementById('password').value;
+
+            var suma = 6;
+            if (suma == 5) {
+                document.getElementById("resultado").innerHTML = '<p class="error"><strong>Error: </strong></p>';
+                return false;
+            } else {
+                this.submit();
+            };
+        };
+
+        //enviar formulario con la tecla ENTER
+        function enterEnviar(event) {
+            if (event.keyCode == 13) {
+                validarContraseña()
+            }
+        }
+    </script>
+
+
+
 
 
     <div>
@@ -67,5 +129,8 @@
             </nav>
         </footer>
     </div>
+
+
 </body>
+
 </html>

@@ -42,9 +42,17 @@
     height: 85px;
 }
 
-
-
 input:invalid,
 textarea:invalid {
-    background: red;
+    background: rgb(201, 117, 117);
 }
+input::placeholder{
+    color: black;
+}
+
+.error{
+    background: #FF4C4C;
+    padding: 10px;
+    border-radius: 7px;
+}
+  
