@@ -54,23 +54,22 @@
 
                 $exit = $array->carIN[$i];
                 echo "<h3>Ultimo Ingreso</h3>";
-                echo $exit->outWork;
-                echo "<div class='continer'> 
-                        <div>
-                            <div class='car_entry'>
-                                <h5>Razon de entrada:</h5>
-                                <p>$exit->toDo</p>
+
+                echo "<div class='car_note'>
+                        <div class='note_in'>
+                            <div class='bar'> 
+                                <div class='resume'>
+                                    <p>Resumen: $exit->toDo</p>
+                                </div>
+                                <div class='date'>
+                                    <p>$exit->dayIN</p>
+                                    
+                                </div>
                             </div>
-                            <div class='car_date'>
-                                <h5>Fecha de entrada:</h5>
-                                <p>$exit->dayIN</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div>
-                            <div class='car_notes'>
-                                <h5>Notas:</h5>
-                                <p class='text'>$exit->noteWork</p>
+                    
+                            <div class='notes'>
+                                <p><b>Notas:</b></p>
+                                <p>$exit->noteWork</p>
                             </div>
                         </div>
                     </div>";
@@ -84,25 +83,24 @@
 
                     $exit=  $array->carIN[$i];
   
-                    echo "<div class='continer'> 
-                            <div>
-                                <div class='car_entry'>
-                                    <h5>Razon de entrada:</h5>
-                                    <p>$exit->toDo</p>
+                    echo "<div class='car_note'>
+                        <div class='note_in'>
+                            <div class='bar'> 
+                                <div class='resume'>
+                                    <p>Resumen: $exit->toDo</p>
                                 </div>
-                                <div class='car_date'>
-                                    <h5>Fecha de entrada:</h5>
+                                <div class='date'>
                                     <p>$exit->dayIN</p>
+                                    
                                 </div>
                             </div>
-                            <hr>
-                            <div>
-                                <div class='car_notes'>
-                                    <h5>Notas:</h5>
-                                    <p class='text'>$exit->noteWork</p>
-                                </div>
+                    
+                            <div class='notes'>
+                                <p><b>Notas:</b></p>
+                                <p>$exit->noteWork</p>
                             </div>
-                        </div>";
+                        </div>
+                    </div>";
                     echo "<br>";
     
                     $i++;

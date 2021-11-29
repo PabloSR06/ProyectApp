@@ -53,3 +53,35 @@
 .show {
     display: block;
 }
+
+
+/*CAR IN*/
+.car_note{
+    display: flex;
+    justify-content: center;
+}
+.note_in{
+    background-color: rgb(245, 245, 245);
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.bar{
+    background-color: #9bb0ff;
+    display: flex;
+    justify-content:space-between; 
+    font-weight: bold;
+    margin-top: none;
+}
+.resume{
+    padding-right: 1rem;
+    padding-left: 1rem;       
+}
+.date{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.notes{
+    padding: 1rem;
+}
+
