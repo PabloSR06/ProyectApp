@@ -6,8 +6,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-  
+}  
 .login_btn{
     width: 100%;
     background-color: #4CAF50;
@@ -18,30 +17,31 @@
     border-radius: 4px;
     cursor: pointer;
 }
-  
 .login_btn:hover {
     background-color: #45a049;
 }
-  
 .login_form {
     border-radius: 5px;
     background-color: #cecece;
     padding: 20px;
-    width: 87%;
-    
-    
+    width: 85%;  
 }
-
-.mid_page{
+.login_form label{
+    float: left;
+}
+.login_form_continer{
     display: flex;
+    justify-content: center; 
+}
+.mid_page{
+    text-align: center;
+    align-items: center;
     justify-content: center;
 }
-
 .message{
     resize: vertical;
     height: 85px;
 }
-
 input:invalid,
 textarea:invalid {
     background: rgb(201, 117, 117);
@@ -49,10 +49,28 @@ textarea:invalid {
 input::placeholder{
     color: black;
 }
-
 .error{
     background: #FF4C4C;
     padding: 10px;
     border-radius: 7px;
 }
-  
+.down_link_continer{
+    display: flex;
+    justify-content: center; 
+}
+.down_links{
+    width: 85%;  
+}
+.down_links p{
+    margin-top: none;
+    display: inline-flex;
+    float: right;
+    margin: none;
+}
+.down_link{
+    text-decoration: none;   
+}
+.down_link_separator{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
