@@ -25,6 +25,8 @@ body{
 /*User Options*/
 .options{
     background-color: #ccc;
+    border-radius: 10px;
+    border-color: black;
     width: 80%;
     margin: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  

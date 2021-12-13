@@ -3,7 +3,7 @@
 
     function query_cars($db, $idClient){
         try {
-            $sql = $db->prepare("SELECT * FROM cars INNER JOIN carin ON cars.idCar = carin.idCar WHERE idClient = :idClient");   
+            $sql = $db->prepare("SELECT * FROM cars INNER JOIN carIN ON cars.idCar = carIN.idCar WHERE idClient = :idClient");   
 
             $sql->bindValue(':idClient', $idClient);
             $sql->execute();
@@ -126,7 +126,7 @@
     }
     function query_carsIN($db, $idCar){
         try {
-            $sql = $db->prepare("SELECT * FROM carin WHERE idCar = :idCar ORDER by `dayIN` DESC ");   
+            $sql = $db->prepare("SELECT * FROM carIN WHERE idCar = :idCar ORDER by `dayIN` DESC ");   
 
             $sql->bindValue(':idCar', $idCar);
             $sql->execute();

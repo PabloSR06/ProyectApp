@@ -1,6 +1,6 @@
 .mid_page{
     display: flex;
-    justify-content: center;
+   
     
     flex-direction: column;
 }
@@ -35,9 +35,10 @@
 .login_form label{
     float: left;
 }
-.login_form_continer{
+.login{
     display: flex;
     justify-content: center; 
+    
 }
 .message{
     resize: vertical;
@@ -62,6 +63,7 @@ input::placeholder{
 }
 .down_links{
     display: flex;
+    justify-content: center;
 }
 .down_links p{
     margin-top: none;

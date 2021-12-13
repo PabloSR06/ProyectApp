@@ -17,7 +17,6 @@
         <h1>COCHES</h1>
         <?php
         session_start();
-        print_r($_SESSION);
 
         require '../php/conectDB.php';
         $db = conectDB();

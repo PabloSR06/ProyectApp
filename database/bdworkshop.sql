@@ -38,7 +38,6 @@ CREATE TABLE carIN(
     dayIN DATE NOT NULL
 
 );
-
 CREATE TABLE invoice(
     idInvoice INT NOT NULL AUTO_INCREMENT, 
     CONSTRAINT PK_IDINVOICE PRIMARY KEY(idInvoice),
@@ -51,9 +50,9 @@ CREATE TABLE invoice(
     CONSTRAINT FK_INVOICEINCAR FOREIGN KEY (idCarIN) REFERENCES carIN(idCarIN)
 );
 
-INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre", "Apellido", "correo@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
-INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre2", "Apellido2", "correo2@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
-INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre3", "Apellido3", "correo3@gmail.com", "$2y$10$LEhoia9rKSD8H0Pqi00nReQ.jDO20hMi3WsnxxN6Wt4NYDr0c92CW");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre", "Apellido", "correo@gmail.com", "2ee17599597d02dbf88b829798db0518");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre2", "Apellido2", "correo2@gmail.com", "2ee17599597d02dbf88b829798db0518");
+INSERT INTO clients (nameClient, surnameClient, emailClient, passwordClient) VALUES ("Nombre3", "Apellido3", "correo3@gmail.com", "2ee17599597d02dbf88b829798db0518");
 
 
 INSERT INTO cars (licensePlate, brand,model,  idClient) VALUES ("GHTG434", "marca", "fs", 1);
@@ -69,5 +68,7 @@ INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo aceit
 INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo1 aceite', 'revicion1', 1, 2021-10-11);
 INSERT INTO carIN (outWork, noteWork, toDo, idCar, dayIN) VALUES (0, 'bajo2 aceite', 'revicion2', 1, CURDATE());
 
+/*
 SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar INNER JOIN clients ON cars.idClient = clients.idClient WHERE clients.idClient = 2;
 SELECT * FROM carIN INNER JOIN cars ON carin.idCar = cars.idCar WHERE cars.idClient = 2;
+*/

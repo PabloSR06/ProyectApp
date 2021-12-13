@@ -25,7 +25,7 @@
 
         echo "<h1>$licensePlate</h1>";
         ?>
-        <p class="text">Aqui encont</p>
+        <p class="text">Aqui encontraras la informacion del trayer relacionada con el vehiculo.</p>
     </div>
 
     <div>
