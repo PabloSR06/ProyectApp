@@ -1,0 +1,28 @@
+# WorkShopApp
+ Application proyect for PGL
+
+
+### idea Basica
+La idea básica es crear una aplicación de gestión de WorkShop en la que usted (como trabajador) pueda introducir la aplicación, los clientes y el coche. Cuando el cliente lleva su coche / coches al taller utilizando la aplicación puede ver la información al respecto, incluidas las facturas y otra información.
+
+## Base de datos
+
+#### clients
+La tabla ** clientes ** tiene sus diferentes campos, importante ver la longitud de la contraseña y el correo electrónico, son tan largos para guardar la contraseña encriptada y la posibilidad de una longitud de correo electrónico puede ascender a más de 250. Todo esto Los campos contienen la información para los clientes.
+
+#### cars
+La tabla ** cars ** está conectada al cliente a través de 'idclient' y con carsIN con 'idCar'. Un cliente puede tener muchos coches y, de la misma forma, un coche puede tener muchos ** carIn **. Como su nombre lo dice, esta tabla contiene información sobre los autos.
+
+#### carsIN
+Esta tabla tiene la información de los autos al ingresar al taller, es uno para cada vez. Puede modificar la columna según sus necesidades.
+
+#### invoice 
+Esta tabla está relacionada con ** carsIN ** y ** clients **, es la información de una factura para cada uno de los campos ** carsIN **.
+
+#### workers
+Este debe contener la información de los trabajadores del taller, esta mesa no está conectada con nadie más.
+
+
+## Autor
+
+**WorkShopApp** © [PabloSR](https://github.com/PabloSR06).  
