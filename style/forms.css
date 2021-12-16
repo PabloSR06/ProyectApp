@@ -44,10 +44,6 @@
     resize: vertical;
     height: 85px;
 }
-input:invalid,
-textarea:invalid {
-    background: rgb(201, 117, 117);
-}
 input::placeholder{
     color: black;
 }
