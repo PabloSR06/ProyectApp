@@ -57,18 +57,14 @@ input::placeholder{
     border-radius: 7px;
 }
 /**/
-.down_link_continer{
-    
-    
+.down_link_continer{ 
 }
 .down_links{
     display: flex;
     justify-content: center;
 }
 .down_links p{
-    margin-top: none;
-    
-    
+    margin-top: none; 
     margin: none;
 }
 .down_link{

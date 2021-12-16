@@ -51,6 +51,17 @@
 
     </div>
 
+    <?php
+       if(isset($_GET["error"]) && $_GET["error"] == 'true')
+       {
+    ?>
+          <script>
+            document.getElementById("resultado").innerHTML = '<p class="error"><strong>Error: Usuario o contraseña incorrecto</strong></p>';
+          </script>
+        <?php
+       }
+     ?>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -63,8 +74,8 @@
             //var password = document.getElementById('password').value;
 
             var suma = 6;
-            if (suma == 5) {
-                document.getElementById("resultado").innerHTML = '<p class="error"><strong>Error: </strong></p>';
+            if (suma == 6) {
+
                 return false;
             } else {
                 this.submit();

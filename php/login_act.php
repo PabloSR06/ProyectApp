@@ -21,15 +21,17 @@
             $_SESSION['session_id'] = session_id();
             header("location: ../index.php");
         }else{
+            header("location: ../forms/login.php?error=true");
             ?>
             
-            <script>
+            
+            <!-- <script>
             alert("Contraseña incorrecta");
             
-            </script>
+            </script> -->
 
             <?php
-            header("location: ../forms/login.html");
+            //header("location: ../forms/login.php");
 
         }
 
