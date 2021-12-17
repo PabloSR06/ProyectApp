@@ -72,14 +72,14 @@
             evento.preventDefault();
             //var email = document.getElementById('email').value;
             //var password = document.getElementById('password').value;
+            this.submit();
+            // var suma = 6;
+            // if (suma == 6) {
 
-            var suma = 6;
-            if (suma == 6) {
-
-                return false;
-            } else {
-                this.submit();
-            };
+            //     return false;
+            // } else {
+                
+            // };
         };
 
         //enviar formulario con la tecla ENTER
