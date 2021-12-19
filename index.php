@@ -19,6 +19,23 @@
 
     </div>
 
+    <div class="mid_page ">
+        <p class="text">Utiliza la barra de navegación inferior para moverte.</p>
+
+        <?php
+        
+        if($_SESSION == null){
+            
+             echo "<p class='text_center'>TODAVIA NO HAS INICIADO SESIÓN</p>";
+
+        }else{
+            echo "<p class='text_center'>TIENES LA SESIÓN ABIERTA</p>";
+            
+        }
+
+        ?>
+    </div>
+
 
     <div>
     <footer class='footer_nav'>

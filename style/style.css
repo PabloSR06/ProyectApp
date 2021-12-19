@@ -108,6 +108,10 @@ body{
     padding-left: 13px;
     padding-right: 13px;
 }
+.text_center{
+   text-align: center;
+   font-weight: bold;
+}
 .botton-down{
     padding-bottom: 80px;
 }

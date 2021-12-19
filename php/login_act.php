@@ -22,17 +22,6 @@
             header("location: ../index.php");
         }else{
             header("location: ../forms/login.php?error=true");
-            ?>
-            
-            
-            <!-- <script>
-            alert("Contraseña incorrecta");
-            
-            </script> -->
-
-            <?php
-            //header("location: ../forms/login.php");
-
         }
 
         $db = null; 
