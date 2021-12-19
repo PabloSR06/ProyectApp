@@ -41,7 +41,7 @@
                 if(isset($_SESSION['idClient']) ){
                     $json =  query_cars2($db, $_SESSION['idClient']);
                 }else{
-                    echo "A ocurrido un error 1";
+                    echo "El idCliente está vacio (Error con la sesión)";
                 }
             } catch (\Throwable $th) {
                 echo "A ocurrido un error";
