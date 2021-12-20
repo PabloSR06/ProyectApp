@@ -1,62 +1,105 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
 
+    <title>Cambiar contraseña</title>
+
+    
+    <link rel="stylesheet" href="../style/forms.css">
     <link rel="stylesheet" href="../style/style.css">
 
 </head>
 <body>
-    <?php
-        session_start();
-    ?>
-    <h1>Ajustes</h1>
+    
+
+    <div class="upper_page">
+        <h1>Cambiar contraseña  </h1>
+
+    </div>
+    <div class="mid_page">
+        <div class="login">
+            <div id="form" class="login_form">
+                <div id="resultado"></div>
+                <form action="../php/change_password_act.php" method="post" id="password_form" onkeypress="enterEnviar(event);">
+                    <label>
+                        Correo <span class="req">*</span>
+                    </label>
+                    <input class="login_input" type="email" placeholder='Correo' name="emailClient" id="email" />
+                    <label>
+                        Contraseña Nueva<span class="req">*</span>
+                    </label>
+                    <input class="login_input" type="password" placeholder='Contraseña' name="passwordClient" id="password" />
+                    <label>
+                        Repite la contraseña<span class="req">*</span>
+                    </label>
+                    <input class="login_input" type="password" placeholder='Contraseña' name="passwordClientNew" id="passwordNew" />
+
+                    <?php 
+                        echo " <input type='hidden' name='idClient' value=".$_SESSION['idClient']."  /> ";
+                    ?>             
 
 
-    <div class="mid_page ">
 
-        <div class="options">
-            <div class="option_name">
-                <?php  echo "<p>".$_SESSION['name']. ''."</p>" ?>
+                    <input type="submit" value="Enviar" class="login_btn">
+
+                </form>
             </div>
-            <div>
-                <div class="option">
-                    <a href="../forms/contact.html"><p >Contacto</p></a>  
-                </div>
-
-                <div class="option">
-                    <a href="../forms/change_password.php"><p >Cambiar contraseña</p></a>  
-                </div>
-                
-                <div class="option">
-                    <a href="../pages/policies.html">
-                        <p >Terminos y Condiciones</p>
-                    </a>
-                </div> 
-            
-                <div class="option">
-                    <a href="../php/close.php">
-                        
-                    <p style="color: rgb(245, 57, 57);">
-                        <svg class="icon_user" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
-                            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-                        </svg>
-                    Cerrar Sesión
-                    </p>
-                    </a>
-                </div> 
-            </div>         
         </div>
+        
+        
+
+
     </div>
 
+    <?php
+       if(isset($_GET["done"]) && $_GET["done"] == 'true')
+       {
+    ?>
+          <script>
+            document.getElementById("resultado").innerHTML = '<p class="done"><strong>La contraseña se ha cambiado correctamente</strong></p>';
+          </script>
+        <?php
+       }
+     ?>
 
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("password_form").addEventListener('submit', validarFormulario);
+        });
+
+        function validarFormulario(evento) {
+            evento.preventDefault();
+            var password1 = document.getElementById('password').value;
+            var password = document.getElementById('passwordNew').value;
+
+            if (password1 != password) {
+                document.getElementById("resultado").innerHTML = '<p class="error"><strong>Error: Las contraseñas no coinciden</strong></p>';
+                return false;
+            }else{
+                this.submit();
+
+            }
+            
+        };
+
+        //enviar formulario con la tecla ENTER
+        function enterEnviar(event) {
+            if (event.keyCode == 13) {
+                validarContraseña()
+            }
+        }
+    </script>
 
     <div>
-    <footer class='footer_nav'>
+        <footer class='footer_nav'>
             <nav class='nav_links'>
                 <a href="../pages/calendar.html" class='nav_link'>
                     <svg class="nav_img" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -102,5 +145,9 @@
             </nav>
         </footer>
     </div>
+    
+    
+    
+    
 </body>
 </html>
